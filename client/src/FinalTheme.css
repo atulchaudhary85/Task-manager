@@ -1,0 +1,1184 @@
+/* =========================================================
+   TASK MANAGER — FINAL GLOBAL THEME
+   Default: White + Blue
+   Optional: Dark from Settings
+========================================================= */
+
+:root {
+  --app-bg: #f5f8ff;
+  --app-bg-2: #eef4ff;
+
+  --surface: #ffffff;
+  --surface-2: #f8faff;
+  --surface-hover: #eff6ff;
+
+  --text: #172033;
+  --text-2: #64748b;
+  --text-3: #94a3b8;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-soft: #eff6ff;
+
+  --border: #e2e8f0;
+  --border-blue: #dbeafe;
+
+  --success: #16a34a;
+  --success-soft: #f0fdf4;
+
+  --warning: #d97706;
+  --warning-soft: #fffbeb;
+
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+
+  --shadow:
+    0 12px 35px rgba(37, 99, 235, 0.08);
+
+  --shadow-large:
+    0 22px 60px rgba(37, 99, 235, 0.12);
+}
+
+html[data-theme='dark'] {
+  --app-bg: #07101f;
+  --app-bg-2: #091426;
+
+  --surface: #0f172a;
+  --surface-2: #0b1526;
+  --surface-hover: #172235;
+
+  --text: #f8fafc;
+  --text-2: #94a3b8;
+  --text-3: #64748b;
+
+  --primary: #6366f1;
+  --primary-hover: #818cf8;
+  --primary-soft: rgba(99, 102, 241, 0.14);
+
+  --border: rgba(148, 163, 184, 0.14);
+  --border-blue: rgba(129, 140, 248, 0.22);
+
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.09);
+
+  --warning: #f59e0b;
+  --warning-soft: rgba(245, 158, 11, 0.09);
+
+  --danger: #ef4444;
+  --danger-soft: rgba(239, 68, 68, 0.09);
+
+  --shadow:
+    0 12px 35px rgba(0, 0, 0, 0.2);
+
+  --shadow-large:
+    0 22px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  background: var(--app-bg);
+}
+
+body {
+  margin: 0;
+
+  background: var(--app-bg);
+
+  color: var(--text);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea,
+select {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.productivity-app {
+  background: var(--app-bg) !important;
+  color: var(--text) !important;
+}
+
+.productivity-sidebar {
+  background: var(--surface) !important;
+
+  border-right:
+    1px solid var(--border) !important;
+
+  color: var(--text) !important;
+
+  box-shadow:
+    5px 0 30px rgba(37, 99, 235, 0.04) !important;
+}
+
+html[data-theme='dark']
+.productivity-sidebar {
+  background: var(--app-bg-2) !important;
+
+  box-shadow: none !important;
+}
+
+.productivity-brand strong {
+  color: var(--text) !important;
+}
+
+.productivity-brand span,
+.sidebar-progress-head,
+.sidebar-bottom,
+.sidebar-user small {
+  color: var(--text-2) !important;
+}
+
+.productivity-nav button {
+  background: transparent !important;
+
+  color: var(--text-2) !important;
+
+  border:
+    1px solid transparent !important;
+}
+
+.productivity-nav button:hover {
+  background:
+    var(--surface-hover) !important;
+
+  color: var(--primary) !important;
+}
+
+.productivity-nav button.active {
+  background:
+    var(--primary-soft) !important;
+
+  color: var(--primary) !important;
+
+  border:
+    1px solid var(--border-blue) !important;
+}
+
+.productivity-nav button b {
+  background:
+    var(--surface-2) !important;
+
+  color: var(--text-2) !important;
+}
+
+.productivity-nav button.active b {
+  background:
+    var(--surface) !important;
+
+  color: var(--primary) !important;
+}
+
+.productivity-main,
+.dashboard-content {
+  background: var(--app-bg) !important;
+}
+
+.dashboard-header,
+.workspace-header,
+.productivity-header {
+  color: var(--text) !important;
+}
+
+.dashboard-header h1,
+.workspace-header h1,
+.productivity-header h1,
+.workspace-title h1 {
+  color: var(--text) !important;
+}
+
+.dashboard-header p,
+.workspace-header p,
+.productivity-header p,
+.workspace-title p {
+  color: var(--text-2) !important;
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.stat-card,
+.day-strip-section,
+.day-card,
+.workspace-panel,
+.task-column,
+.pro-task-card,
+.task-card,
+.sidebar-progress,
+.upcoming-card,
+.daily-checklist,
+.insight-card,
+.productivity-panel {
+  background: var(--surface) !important;
+
+  border:
+    1px solid var(--border) !important;
+
+  color: var(--text) !important;
+
+  box-shadow: var(--shadow) !important;
+}
+
+.task-column {
+  overflow: hidden;
+}
+
+.column-header {
+  background:
+    var(--surface-2) !important;
+
+  border-bottom:
+    1px solid var(--border) !important;
+}
+
+.column-header h2 {
+  color: var(--text-2) !important;
+}
+
+.column-header span {
+  background:
+    var(--primary-soft) !important;
+
+  color: var(--primary) !important;
+}
+
+.pro-task-card,
+.task-card {
+  background: var(--surface) !important;
+}
+
+.pro-task-card:hover,
+.task-card:hover {
+  border-color:
+    var(--border-blue) !important;
+
+  box-shadow:
+    var(--shadow-large) !important;
+}
+
+.pro-task-card h3,
+.task-card h3,
+.stat-card strong,
+.day-card strong,
+.workspace-panel h2 {
+  color: var(--text) !important;
+}
+
+.task-description,
+.task-info-label,
+.subtask-progress-head,
+.task-status-text,
+.stat-card p,
+.day-card span,
+.day-card small,
+.empty-column {
+  color: var(--text-2) !important;
+}
+
+.task-info-grid > div {
+  background:
+    var(--surface-2) !important;
+
+  border:
+    1px solid var(--border) !important;
+}
+
+.category-chip,
+.task-tags span {
+  background:
+    var(--primary-soft) !important;
+
+  color: var(--primary) !important;
+}
+
+.mini-progress,
+.stat-progress {
+  background:
+    var(--surface-hover) !important;
+}
+
+.mini-progress span,
+.stat-progress span {
+  background:
+    var(--primary) !important;
+}
+
+
+/* =========================================================
+   DAY STRIP
+========================================================= */
+
+.day-card:hover {
+  border-color:
+    var(--border-blue) !important;
+
+  background:
+    var(--surface-hover) !important;
+}
+
+.day-card.today,
+.day-card.selected {
+  background:
+    var(--primary-soft) !important;
+
+  border-color:
+    var(--primary) !important;
+}
+
+.day-card.today strong,
+.day-card.selected strong {
+  color: var(--primary) !important;
+}
+
+
+/* =========================================================
+   DASHBOARD INPUTS
+========================================================= */
+
+.search-box,
+.filter-group,
+.dashboard-toolbar input,
+.dashboard-toolbar select,
+.workspace-toolbar input,
+.workspace-toolbar select,
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background:
+    var(--surface) !important;
+
+  border:
+    1px solid var(--border) !important;
+
+  color: var(--text) !important;
+}
+
+.search-box input {
+  color: var(--text) !important;
+}
+
+.search-box input::placeholder,
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-3) !important;
+}
+
+.search-box:focus-within,
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  border-color:
+    var(--primary) !important;
+
+  box-shadow:
+    0 0 0 3px var(--primary-soft) !important;
+
+  outline: none !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-button,
+.habits-primary-button,
+.black-button {
+  background:
+    var(--primary) !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    var(--primary) !important;
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.18) !important;
+}
+
+.primary-button:hover,
+.habits-primary-button:hover,
+.black-button:hover {
+  background:
+    var(--primary-hover) !important;
+}
+
+.secondary-button,
+.habit-secondary-button {
+  background:
+    var(--surface) !important;
+
+  color: var(--text) !important;
+
+  border:
+    1px solid var(--border) !important;
+}
+
+.secondary-button:hover,
+.habit-secondary-button:hover {
+  background:
+    var(--surface-hover) !important;
+}
+
+.text-button {
+  color: var(--primary) !important;
+}
+
+.danger-button {
+  color: var(--danger) !important;
+}
+
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.modal-backdrop,
+.habit-modal-backdrop {
+  background:
+    rgba(15, 23, 42, 0.48) !important;
+
+  backdrop-filter:
+    blur(6px);
+}
+
+.task-modal,
+.modal-card,
+.habit-modal {
+  background:
+    var(--surface) !important;
+
+  border:
+    1px solid var(--border) !important;
+
+  color: var(--text) !important;
+
+  box-shadow:
+    var(--shadow-large) !important;
+}
+
+.modal-header,
+.habit-modal-header {
+  border-bottom:
+    1px solid var(--border) !important;
+}
+
+.modal-header h2,
+.habit-modal-header h2 {
+  color: var(--text) !important;
+}
+
+.modal-close,
+.habit-close {
+  background:
+    var(--surface-2) !important;
+
+  color: var(--text-2) !important;
+
+  border:
+    1px solid var(--border) !important;
+}
+
+
+/* =========================================================
+   HABITS
+========================================================= */
+
+.habits-page {
+  background:
+    var(--app-bg) !important;
+
+  color:
+    var(--text) !important;
+}
+
+.habits-header h1,
+.habits-workspace h2,
+.habit-section-title h2,
+.habit-insight h2,
+.habit-row h3 {
+  color:
+    var(--text) !important;
+}
+
+.habits-subtitle,
+.habit-row p,
+.habit-insight p,
+.habit-stat-card p {
+  color:
+    var(--text-2) !important;
+}
+
+.habits-kicker {
+  color:
+    var(--primary) !important;
+}
+
+.habit-stat-card,
+.habit-calendar,
+.habits-workspace,
+.habit-row,
+.habit-insight {
+  background:
+    var(--surface) !important;
+
+  border:
+    1px solid var(--border) !important;
+
+  box-shadow:
+    var(--shadow) !important;
+
+  color:
+    var(--text) !important;
+}
+
+.habit-stat-card.featured {
+  background:
+    var(--primary-soft) !important;
+
+  border-color:
+    var(--border-blue) !important;
+}
+
+.habit-stat-card strong {
+  color:
+    var(--text) !important;
+}
+
+.habit-stat-card.featured strong {
+  color:
+    var(--primary) !important;
+}
+
+.habit-stat-bar {
+  background:
+    var(--surface-hover) !important;
+}
+
+.habit-stat-bar span {
+  background:
+    var(--primary) !important;
+}
+
+.habit-day {
+  background:
+    var(--surface-2) !important;
+
+  color:
+    var(--text-2) !important;
+
+  border:
+    1px solid var(--border) !important;
+}
+
+.habit-day:hover {
+  border-color:
+    var(--border-blue) !important;
+}
+
+.habit-day.today,
+.habit-day.selected {
+  background:
+    var(--primary-soft) !important;
+
+  color:
+    var(--primary) !important;
+
+  border-color:
+    var(--primary) !important;
+}
+
+.habit-row.completed {
+  background:
+    var(--success-soft) !important;
+}
+
+.habit-check {
+  background:
+    var(--surface) !important;
+
+  border:
+    1px solid var(--border) !important;
+
+  color:
+    #ffffff !important;
+}
+
+.habit-check.checked {
+  background:
+    var(--primary) !important;
+
+  border-color:
+    var(--primary) !important;
+}
+
+.habit-category {
+  background:
+    var(--primary-soft) !important;
+
+  color:
+    var(--primary) !important;
+}
+
+.habits-search,
+.habits-controls select,
+.habit-modal input,
+.habit-modal textarea,
+.habit-modal select {
+  background:
+    var(--surface) !important;
+
+  color:
+    var(--text) !important;
+
+  border:
+    1px solid var(--border) !important;
+}
+
+.habits-search input {
+  color:
+    var(--text) !important;
+}
+
+.insight-ring {
+  border-color:
+    var(--primary) !important;
+
+  color:
+    var(--primary) !important;
+
+  background:
+    var(--primary-soft) !important;
+}
+
+
+/* =========================================================
+   AUTH — LOGIN / SIGNUP / FORGOT
+========================================================= */
+
+.premium-auth {
+  background:
+    var(--app-bg) !important;
+
+  color:
+    var(--text) !important;
+}
+
+.brand-side {
+  background:
+    linear-gradient(
+      145deg,
+      #2563eb,
+      #3b82f6
+    ) !important;
+
+  color:
+    #ffffff !important;
+}
+
+html[data-theme='dark']
+.brand-side {
+  background:
+    linear-gradient(
+      145deg,
+      #111827,
+      #312e81
+    ) !important;
+}
+
+.brand-side h1,
+.brand-side p,
+.brand-top,
+.brand-footer,
+.brand-copy {
+  color:
+    #ffffff !important;
+}
+
+.auth-side {
+  background:
+    var(--surface) !important;
+
+  color:
+    var(--text) !important;
+}
+
+.auth-content {
+  color:
+    var(--text) !important;
+}
+
+.form-heading h2 {
+  color:
+    var(--text) !important;
+}
+
+.form-heading p,
+.auth-helper,
+.account-link,
+.brand-footer {
+  color:
+    var(--text-2) !important;
+}
+
+.brand-side .brand-footer {
+  color:
+    rgba(255, 255, 255, 0.8) !important;
+}
+
+.step-number,
+.micro-label {
+  color:
+    var(--primary) !important;
+}
+
+.brand-side .micro-label {
+  color:
+    rgba(255, 255, 255, 0.72) !important;
+}
+
+.field-group label {
+  color:
+    var(--text-2) !important;
+}
+
+.field-group input,
+.password-input-wrap input,
+.otp-input {
+  background:
+    var(--surface) !important;
+
+  color:
+    var(--text) !important;
+
+  border:
+    1px solid var(--border) !important;
+}
+
+.field-group input:focus,
+.password-input-wrap input:focus,
+.otp-input:focus {
+  border-color:
+    var(--primary) !important;
+
+  box-shadow:
+    0 0 0 3px var(--primary-soft) !important;
+}
+
+.field-group input::placeholder {
+  color:
+    var(--text-3) !important;
+}
+
+.password-toggle {
+  color:
+    var(--primary) !important;
+}
+
+.minimal-alert.error {
+  background:
+    var(--danger-soft) !important;
+
+  color:
+    var(--danger) !important;
+
+  border:
+    1px solid rgba(220, 38, 38, 0.18) !important;
+}
+
+.minimal-alert.success {
+  background:
+    var(--success-soft) !important;
+
+  color:
+    var(--success) !important;
+
+  border:
+    1px solid rgba(22, 163, 74, 0.18) !important;
+}
+
+.mobile-brand {
+  color:
+    var(--text) !important;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+========================================================= */
+
+* {
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    var(--border)
+    transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background:
+    var(--border);
+
+  border-radius:
+    999px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .productivity-sidebar {
+    width: 205px !important;
+    min-width: 205px !important;
+  }
+
+  .productivity-main,
+  .dashboard-content {
+    padding-left:
+      22px !important;
+
+    padding-right:
+      22px !important;
+  }
+
+  .task-board {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      ) !important;
+  }
+
+  .habit-stat-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      ) !important;
+  }
+
+  .habit-insight-grid {
+    grid-template-columns:
+      1fr !important;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .productivity-app {
+    display:
+      block !important;
+  }
+
+  .productivity-sidebar {
+    position:
+      relative !important;
+
+    width:
+      100% !important;
+
+    min-width:
+      0 !important;
+
+    min-height:
+      auto !important;
+
+    padding:
+      14px !important;
+
+    border-right:
+      0 !important;
+
+    border-bottom:
+      1px solid var(--border) !important;
+  }
+
+  .productivity-sidebar
+  > div:first-child {
+    width:
+      100%;
+  }
+
+  .productivity-brand {
+    margin-bottom:
+      14px !important;
+  }
+
+  .productivity-nav {
+    display:
+      flex !important;
+
+    gap:
+      7px !important;
+
+    overflow-x:
+      auto !important;
+
+    padding-bottom:
+      5px;
+  }
+
+  .productivity-nav button {
+    flex:
+      0 0 auto;
+
+    white-space:
+      nowrap;
+  }
+
+  .sidebar-bottom {
+    display:
+      none !important;
+  }
+
+  .productivity-main,
+  .dashboard-content {
+    width:
+      100% !important;
+
+    padding:
+      20px 14px 45px !important;
+  }
+
+  .dashboard-header,
+  .productivity-header,
+  .workspace-header,
+  .habits-header {
+    flex-direction:
+      column !important;
+
+    align-items:
+      stretch !important;
+  }
+
+  .task-board {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .task-column {
+    width:
+      100%;
+  }
+
+  .column-body {
+    min-height:
+      170px !important;
+  }
+
+  .stat-grid,
+  .dashboard-stat-grid,
+  .habit-stat-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      ) !important;
+  }
+
+  .day-strip,
+  .habit-day-strip {
+    overflow-x:
+      auto !important;
+
+    display:
+      flex !important;
+
+    padding-bottom:
+      8px;
+  }
+
+  .day-card,
+  .habit-day {
+    min-width:
+      75px;
+  }
+
+  .workspace-toolbar,
+  .habits-toolbar,
+  .habits-controls {
+    flex-direction:
+      column !important;
+
+    align-items:
+      stretch !important;
+  }
+
+  .search-box,
+  .habits-search {
+    width:
+      100% !important;
+  }
+
+  .premium-auth {
+    display:
+      block !important;
+
+    min-height:
+      100vh;
+  }
+
+  .brand-side {
+    min-height:
+      auto !important;
+
+    padding:
+      24px 20px !important;
+  }
+
+  .brand-copy {
+    margin:
+      45px 0 !important;
+  }
+
+  .brand-copy h1 {
+    font-size:
+      36px !important;
+  }
+
+  .auth-side {
+    min-height:
+      auto !important;
+
+    padding:
+      28px 18px 45px !important;
+  }
+
+  .auth-content {
+    width:
+      100% !important;
+
+    max-width:
+      500px !important;
+  }
+
+  .habit-row {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .habit-insight {
+    flex-direction:
+      column !important;
+
+    align-items:
+      flex-start !important;
+  }
+
+  .task-modal,
+  .modal-card,
+  .habit-modal {
+    width:
+      calc(100% - 20px) !important;
+
+    max-height:
+      92vh !important;
+
+    overflow-y:
+      auto !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .stat-grid,
+  .dashboard-stat-grid,
+  .habit-stat-grid {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .productivity-main,
+  .dashboard-content {
+    padding:
+      16px 10px 38px !important;
+  }
+
+  .dashboard-header h1,
+  .habits-header h1 {
+    font-size:
+      30px !important;
+  }
+
+  .task-actions {
+    flex-wrap:
+      wrap !important;
+  }
+
+  .form-grid,
+  .advanced-form-grid,
+  .habit-form-grid {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .modal-actions,
+  .habit-modal-actions {
+    flex-direction:
+      column-reverse !important;
+  }
+
+  .modal-actions button,
+  .habit-modal-actions button {
+    width:
+      100% !important;
+  }
+}
